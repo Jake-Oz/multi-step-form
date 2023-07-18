@@ -1,3 +1,5 @@
+"use client";
+
 import { useDataCollector, Plan, Addons } from "../hooks/useDataCollector";
 import { plans } from "../data/plans";
 

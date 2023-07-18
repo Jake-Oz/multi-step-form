@@ -1,3 +1,5 @@
+"use client";
+
 interface ButtonsProps {
   primaryActionLabel: string;
   secondaryActionLabel: string;

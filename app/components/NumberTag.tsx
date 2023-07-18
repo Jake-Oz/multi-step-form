@@ -1,3 +1,5 @@
+"use client";
+
 interface NumberTagProps {
   numberTag: number;
   isSelected: boolean;

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import thankYouIcon from "@/public/icon-thank-you.svg";
 
