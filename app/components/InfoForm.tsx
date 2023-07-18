@@ -28,7 +28,7 @@ const InfoForm: React.FC<InfoFormProps> = ({ register, errors, watch }) => {
       email: email,
       phone: phone,
     });
-  }, [name, email, phone, dataStore]);
+  }, [name, email, phone]);
 
   return (
     <form className="mt-4">
