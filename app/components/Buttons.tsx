@@ -17,6 +17,7 @@ const Buttons: React.FC<ButtonsProps> = ({
     <div className="flex justify-between">
       <button
         type="submit"
+        aria-label="Back"
         onClick={handleSecondarySubmit}
         className="block text-sm text-coolGray hover:text-marineBlue"
       >
@@ -24,6 +25,7 @@ const Buttons: React.FC<ButtonsProps> = ({
       </button>
       <button
         type="submit"
+        aria-label="Action Button"
         onClick={handleActionSubmit}
         className={`block h-10 w-[6.5rem] px-3 py-2 rounded text-sm ${
           primaryActionLabel === "Confirm"
