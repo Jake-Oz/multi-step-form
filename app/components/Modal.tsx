@@ -15,6 +15,7 @@ import InfoForm from "./InfoForm";
 import PlanOptions from "./PlanOptions";
 import AddonOptions from "./AddonOptions";
 import Summary from "./Summary";
+import { data } from "autoprefixer";
 
 enum STEPS {
   PERSONAL = 1,
@@ -91,10 +92,6 @@ const Modal = () => {
     if (step !== STEPS.PERSONAL) {
       onBack();
     }
-  };
-
-  const changePlan = () => {
-    setStep(STEPS.PLAN);
   };
 
   let bodyContent = (
@@ -183,7 +180,7 @@ const Modal = () => {
               subtitle="Double-check everything looks OK before confirming."
             />
             <div>
-              <Summary ChangePlan={changePlan} />
+              <Summary />
             </div>
           </div>
         </div>

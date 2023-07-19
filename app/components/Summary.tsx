@@ -2,16 +2,14 @@
 
 import { useDataCollector, Plan, Addons } from "../hooks/useDataCollector";
 import { plans } from "../data/plans";
+import { useState } from "react";
 
-interface SummaryProps {
-  ChangePlan: () => void;
-}
-
-const Summary: React.FC<SummaryProps> = ({ ChangePlan }) => {
+const Summary = () => {
   const data = useDataCollector();
+  const [yearly, setYearly] = useState(data.yearly);
+
   const plan = data.plan;
   const addons = data.addons;
-  const yearly = data.yearly;
   const addonTitles = {
     online: "Online service",
     storage: "Larger storage",
@@ -24,6 +22,11 @@ const Summary: React.FC<SummaryProps> = ({ ChangePlan }) => {
 
   let totalCost: number = planCost;
 
+  const updateYearly = () => {
+    data.updateYearly(!yearly);
+    setYearly((prev) => !yearly);
+  };
+
   return (
     <div className="mt-6">
       <div className="flex justify-between items-center p-4 bg-alabaster rounded-t-lg">
@@ -33,7 +36,7 @@ const Summary: React.FC<SummaryProps> = ({ ChangePlan }) => {
           } ${yearly ? "(Yearly)" : "(Monthly)"}`}</h1>
           <p
             className="text-coolGray hover:text-purplishBlue underline decoration-2 cursor-pointer"
-            onClick={ChangePlan}
+            onClick={updateYearly}
           >
             Change
           </p>
